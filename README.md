@@ -1,4 +1,4 @@
-# Pasal Contour
+# Pascal Contour Routine
 
 Implementation of a cursor based contour solver routine.
 Unit to realize a polygon based contouring routine.
