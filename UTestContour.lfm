@@ -1,0 +1,171 @@
+object FrmMazeSolverDemo: TFrmMazeSolverDemo
+  Left = 193
+  Height = 1028
+  Top = 0
+  Width = 1410
+  Caption = 'FrmMazeSolverDemo'
+  ClientHeight = 1028
+  ClientWidth = 1410
+  DesignTimePPI = 84
+  OnCreate = FormCreate
+  OnShow = FormShow
+  LCLVersion = '2.2.4.0'
+  object mmIo: TMemo
+    Left = 0
+    Height = 1002
+    Top = 26
+    Width = 372
+    Align = alLeft
+    Font.Height = -12
+    Font.Name = 'Monospace'
+    Lines.Strings = (
+      ''
+    )
+    ParentFont = False
+    ScrollBars = ssBoth
+    TabOrder = 0
+  end
+  object pnlBtn: TPanel
+    Left = 0
+    Height = 26
+    Top = 0
+    Width = 1410
+    Align = alTop
+    AutoSize = True
+    BevelOuter = bvNone
+    ClientHeight = 26
+    ClientWidth = 1410
+    TabOrder = 1
+    object btnRun: TButton
+      Left = 217
+      Height = 26
+      Top = 0
+      Width = 80
+      Align = alLeft
+      AutoSize = True
+      Caption = 'Solve Maze'
+      OnClick = btnRunClick
+      TabOrder = 0
+    end
+    object cbxDataSelect: TComboBox
+      Left = 0
+      Height = 26
+      Top = 0
+      Width = 217
+      Align = alLeft
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        'Chess'
+        'Cross1'
+        'Cross2'
+        'CrossHole'
+        'LargeHole'
+        'RectBorder'
+        'Singles'
+        'SmallHole'
+        'Complex'
+      )
+      OnChange = cbxDataSelectChange
+      Style = csDropDownList
+      TabOrder = 1
+      Text = 'Chess'
+    end
+    object chkInvertData: TCheckBox
+      Left = 409
+      Height = 22
+      Top = 2
+      Width = 91
+      Align = alLeft
+      BorderSpacing.Left = 4
+      BorderSpacing.Around = 2
+      Caption = 'Invert Data'
+      TabOrder = 2
+    end
+    object chkWithCorners: TCheckBox
+      Left = 299
+      Height = 22
+      Top = 2
+      Width = 104
+      Align = alLeft
+      BorderSpacing.Around = 2
+      Caption = 'With Corners'
+      TabOrder = 3
+    end
+    object chkCorrectBorder: TCheckBox
+      Left = 506
+      Height = 22
+      Top = 2
+      Width = 113
+      Align = alLeft
+      BorderSpacing.Left = 4
+      BorderSpacing.Around = 2
+      Caption = 'Correct Border'
+      Checked = True
+      State = cbChecked
+      TabOrder = 4
+    end
+    object lblProgress: TLabel
+      Left = 1404
+      Height = 22
+      Top = 2
+      Width = 4
+      Align = alRight
+      Alignment = taRightJustify
+      BorderSpacing.Around = 2
+      Caption = '.'
+      Layout = tlCenter
+      ParentColor = False
+    end
+  end
+  object splLog: TSplitter
+    Left = 372
+    Height = 1002
+    Top = 26
+    Width = 4
+  end
+  object pgPainter: TPageControl
+    Left = 376
+    Height = 1002
+    Top = 26
+    Width = 1034
+    ActivePage = tsMazeMatrix
+    Align = alClient
+    TabIndex = 1
+    TabOrder = 3
+    object tsDataMatrix: TTabSheet
+      Caption = 'Data Matrix'
+      ClientHeight = 968
+      ClientWidth = 1028
+      object pnlData: TPanel
+        Left = 2
+        Height = 964
+        Top = 2
+        Width = 1024
+        Align = alClient
+        BorderSpacing.Around = 2
+        BevelOuter = bvNone
+        TabOrder = 0
+        OnPaint = pnlDataPaint
+        OnResize = pnlDataResize
+      end
+    end
+    object tsMazeMatrix: TTabSheet
+      Caption = 'Maze Matrix'
+      ClientHeight = 968
+      ClientWidth = 1028
+      object pnlMask: TPanel
+        Left = 2
+        Height = 964
+        Top = 2
+        Width = 1024
+        Align = alClient
+        BorderSpacing.Around = 2
+        BevelOuter = bvNone
+        TabOrder = 0
+        OnPaint = pnlMaskPaint
+        OnResize = pnlMaskResize
+      end
+    end
+  end
+end
